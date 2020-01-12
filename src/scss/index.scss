@@ -1,0 +1,69 @@
+/**
+ * Vendor styles go here
+ **/
+
+//  @import '~bootstrap/dist/css/bootstrap.css'; 
+@import './base/reset';
+@import './base/fonts';
+@import './output.scss';
+
+/**
+ * Global styles go here
+ **/
+
+ body {
+   background: $color-neutral;
+   padding-bottom: 150px;
+   font-family: 'Roboto', sans-serif;
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      background: linear-gradient(159.41deg, $color-accent-secondary 3.42%, $color-accent-light 96.5%) no-repeat;
+      width: 100%;
+      height: 560px;
+      // -webkit-clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+ }
+
+ a, button {
+   cursor: pointer;
+ }
+
+ h1, h2, h3 {
+  text-transform: uppercase;
+  font-weight: $weight-bold;
+  margin-top: 5px;
+  margin-bottom: 20px;
+ }
+
+ h1 {
+   font-size: 26px;
+   line-height: 30px;
+   letter-spacing: 1.5px;
+   text-align: center;
+ }
+
+ h3 {
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: .5px;
+  color: $color-netural-dark;
+ }
+
+ button {
+   font-size: 16px;
+   line-height: 30px;
+   letter-spacing: .5px;
+   font-weight: $weight-bold;
+
+   &:active, &:focus {
+     outline: none;
+   }
+ }
+
+ img {
+   max-width: 100%;
+ }

@@ -1,0 +1,35 @@
+<header>
+  <div class="welcome_arrow">
+    <img src="../../../../assets/Arrow.svg">
+  </div>
+  <div class="logo">
+    <img src="../../../../assets/Logo.svg">
+  </div>
+</header>
+<section class="film_listing_widget">
+  <h1>Find a movie</h1>
+  <div class="select_theater">
+    <h3>Select Theater</h3>
+    <div class="theaters_list">
+      <button ng-repeat="cinema in $ctrl.market.cinemas"
+       ng-click="$ctrl.selectTheater(cinema.id)" 
+       ng-class="{ active: cinema.selected }" 
+       class="theater">
+        {{ cinema.name }}
+      </button ng-repeat="cinema in $ctrl.market.cinemas"
+      >
+    </div>
+  </div>
+  <div class="films_playing" ng-if="$ctrl.selectedTheater">
+    <h3>Films playing at <span class="emphasize">{{ $ctrl.selectedTheater.name }}</span></h3>
+    <div class="showings">
+      <a ng-repeat="showing in $ctrl.selectedTheater.filmsShowing" 
+      href="https://drafthouse.com/show/{{ showing.slug }}"
+      class="showing">
+        <!-- some titles are really long, added a css ellipsis but could also lower font sizes as well -->
+        <span class="title ellipsis_one_line">{{ showing.title }}</span>
+        <div class="cart"></div>
+      </a>
+    </div>
+  </div>
+</section>

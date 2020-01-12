@@ -1,0 +1,109 @@
+@import '../../../../scss/output.scss';
+
+.welcome_arrow {
+   display: flex;
+   justify-content: center;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.film_listing_widget {
+  box-shadow: 0px 1px 5px rgba(24, 17, 3, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(24, 17, 3, 0.14);
+  width: 752px;
+  min-height: 722px;
+  background: $white;
+  border-radius: 4px;
+  margin: auto;
+  padding: 20px 80px;
+
+  @include breakpoint(xs) {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+.select_theater {
+  margin: 40px 0;
+}
+
+.theaters_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  .theater {
+    width: 32%;
+    padding: 5px 0;
+    border: #090909 1px solid;
+    border-radius: 4px;
+    text-align: center;
+    margin: 0 0 15px 0;
+
+    &.active, &:hover {
+      background-color: $color-accent;
+      border: none;
+    }
+
+    @include breakpoint(xs) {
+      width: 165px;
+      margin: 0 5px 15px 5px;
+    }
+  }
+
+  @include breakpoint(xs) {
+    justify-content: center;
+  }
+}
+
+.films_playing {
+  .emphasize {
+    color: $color-main;
+  }
+}
+
+.showing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid $color-main;
+  border-radius: 4px;
+  background: $white;
+  padding: 10px 20px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $color-main;
+
+    .title {
+      color: $color-accent;
+    }
+
+    .cart {
+      background-image: url('../../../../assets/cart-active.svg');
+
+    }
+  }
+
+  .title {
+    font-size: 22px;
+    line-height: 28px;
+    letter-spacing: 1px;
+    font-weight: $weight-bold;
+    color: $color-main;
+    max-width: 90%;
+  }
+
+  .cart {
+    // ideally we would use an icon instead so we dont have to swap images for different
+    background-image: url('../../../../assets/cart.svg');
+    width: 22px;
+    height: 22px;
+    background-repeat: no-repeat;
+  }
+}
